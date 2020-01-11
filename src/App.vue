@@ -1,19 +1,27 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld v-bind:msg="msg"/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import global from './components/Common'
 
 export default {
   name: 'app',
   components: {
     HelloWorld
+  },
+  data(){
+    return {
+      msg : global.message
+    }
   }
 }
+
+
 </script>
 
 <style>
